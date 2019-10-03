@@ -29,6 +29,9 @@ namespace WordBreak
                     {
                         continue;
                     }
+//Had to change the line below from ...Substring(j, i) to what you see due to how the Substring() method
+//is implemented in C# vs. Java. Java uses a starting point of zero for the second index, whereas C# seems
+//to start from the previous index, j in this, leaves off.
                     if (wordDict.Contains(s.Substring(j, i-j)))
                     {
                         isWordBreak[i] = true;
